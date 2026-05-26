@@ -1,0 +1,20 @@
+# Données
+nlp-getting-started/
+glove.6B/
+*.zip
+*.csv 
+
+# Résultats / outputs
+RNN_resultats/
+*.h5
+*.pt
+*.pkl
+*.model
+
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import os
+from keras.datasets import imdb
+from keras.preprocessing.sequence import pad_sequences
+import numpy as np
 
 def plot_all_metrics(histories, SAVE_DIR, fileName):
     # Ensure the input is always a dictionary
@@ -32,3 +35,21 @@ def plot_all_metrics(histories, SAVE_DIR, fileName):
     plt.tight_layout()
     plt.savefig(os.path.join(SAVE_DIR, fileName))
     plt.show()
+
+
+def encode_review(text, maxlen=20, max_features=10000):
+    # Récupérer le dictionnaire mot -> index
+    word_index = imdb.get_word_index()
+    
+    # Tokeniser et convertir en indices
+    # (IMDB décale les indices de 3 : 0=padding, 1=début, 2=inconnu)
+    words = text.lower().split()
+    encoded = [word_index.get(word, 2) + 3 for word in words]
+    
+    # Garder uniquement les mots dans le vocabulaire
+    encoded = [idx if idx < max_features else 2 for idx in encoded]
+    
+    # Padder à la longueur maxlen
+    padded = pad_sequences([encoded], maxlen=maxlen)
+    
+    return padded

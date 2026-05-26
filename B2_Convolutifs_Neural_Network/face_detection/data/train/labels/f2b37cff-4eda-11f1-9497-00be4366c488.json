@@ -1,0 +1,25 @@
+{
+  "version": "5.4.0.post1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "Ghita",
+      "points": [
+        [
+          267.3404255319149,
+          222.4468085106383
+        ],
+        [
+          417.34042553191483,
+          441.06382978723406
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "f2b37cff-4eda-11f1-9497-00be4366c488.jpg",
+  "imageData": 
